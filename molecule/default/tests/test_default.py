@@ -12,3 +12,10 @@ def test_hosts_file(host):
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
+
+
+def test_certificiate_dir(host):
+    cert_dir = host.file('/etc/grid-security/certificates')
+
+    assert cert_dir.exists
+    assert cert_dir.is_directory
