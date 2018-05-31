@@ -1,0 +1,33 @@
+---
+language: python
+python:
+  - '2.7'
+sudo: required
+services:
+  - docker
+env:
+  md_ignore: R1
+before_install:
+install:
+  - pip install -r requirements.txt
+before_script:
+  - 'for file in `find . -maxdepth 2 -name "*.md"` ;  do markdownlint --ignore $md_ignore
+  $file ; done'
+script:
+  - cd test-role
+  - molecule check
+  - molecule dependency
+  - molecule create
+  - molecule converge
+  - molecule verify
+  - cd $TRAVIS_BUILD_DIR
+after_success:
+after_failure:
+before_deploy:
+deploy:
+after_deploy:
+after_script:
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  slack:
+    secure: PmigS5k2M2LvuC5nmdJaLNild30yiH7M3Yab4xcSN9IQbWNsM3mbITpaMBiatcgLs75AvzlSM0YqBuyhU5HZ2kDGoQaEVQ4BIqTX+OeLMvsD9duJGYYF71kvOUjlhxdwJHGMkWqf8UmdMWGLzSivGxh1Vt6ow6ZQwj4TFaeOHgjpmp3/uxzK1WD+MzknBBtcmBYhrk6RPuQJWjAq5qr8M2AjLXoz3m4JrnP+ZEhGmHgAqcjsD1pS/xgA2FsicGjc3GLuZwEGbgmPpC9vuT/bJ0HzGhSBUzJbuL/pUxVAroS/EH/TWrYwmSZL9ZZOIq+xQG0GQ0AC8RGkZeMnR+l9IO7uyaM8j6cOwKixRQgm3xzEH0QXdWcjgaVxCFkGn+GDO1m6SdYSrlb/C71lZPmMUzX3HVbUG9KW4S+RKoCfJNYsB03qRsRkafMCwgHsZ8TkRBvi9mxcZm2QJKfU6ltELn2bvyPWH2mc93vGtHnfc+cBzmNn1u4brh6Cmva5LodqzxfqzciCV1fqFkyqH8PEZpGUIM9/78/VP6731o1ZzHq+sm+QHi6Gb6rllBRcqoW1aKA9v8w+ZEYo8GPsnDrJD4QX5vNFY/4bLjAuhZexAiCL/I0BwN6r+JYvsggUFNQxvnaWGtzNyJ9DaVzf0zMasoSwF+OoZYvRdadPjQPs06k=
