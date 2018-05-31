@@ -4,7 +4,7 @@
 
 ## Requirements
 
-None yet
+See [`requirements.txt`](requirements.txt)
 
 ## Role Variables
 
