@@ -2,4 +2,5 @@
 - name: Converge
   hosts: all
   roles:
+    - { role: brucellino.ansible-umd, release: 4 }
     - role: voms-client

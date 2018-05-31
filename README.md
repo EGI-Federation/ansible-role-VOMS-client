@@ -1,4 +1,4 @@
-# VOMS Client
+# VOMS Client [![Build Status](https://travis-ci.org/EGI-Foundation/VOMS-client-ansible.svg?branch=master)](https://travis-ci.org/EGI-Foundation/VOMS-client-ansible)
 
 <!-- A brief description of the role goes here. -->
 
