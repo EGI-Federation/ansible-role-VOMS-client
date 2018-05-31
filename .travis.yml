@@ -14,7 +14,6 @@ before_script:
   - 'for file in `find . -maxdepth 2 -name "*.md"` ;  do markdownlint --ignore $md_ignore
   $file ; done'
 script:
-  - cd test-role
   - molecule check
   - molecule dependency
   - molecule create
