@@ -5,3 +5,50 @@
     name: "{{ item }}"
     state: present
   loop: "{{ prerequisites[(ansible_os_family|lower)][ansible_distribution_major_version]}}"
+
+- name: Ensure Required VOMS directories
+  file:
+    path: "{{ item }}"
+    state: "directory"
+  loop:
+    - "{{voms_dir}}"
+    - "{{ vomses_dir }}"
+
+- name: Get all the VOs
+  get_url:
+    url: "{{ vo_source_of_truth }}"
+    dest: /tmp/voms_vo.json
+  creates: /tmp/voms_vo.json
+  delegate_to: localhost
+
+- name: Add a cron job to get the VOMS VO file
+  debug:
+    msg: "I guess?"
+
+- name: Configure specified VOs
+  include_vars:
+    file:  /tmp/voms_vo.json
+    name: BFV
+
+# - name: Display all the VO names
+#   debug:
+#     msg: "{{item}}"
+#   loop: "{{ BFV | json_query('data[*].Vo[0].name[0]') }}"
+
+# - name: Debug Ops info
+#   debug: 
+#     var: item
+#   loop: "{{ BFV |json_query('data[*].Vo[0][name[0]=`ops`]')}}"
+
+
+- name: Create LSC directories
+  file:
+    path: "{{ voms_dir }}/{{ item }}"
+    state: directory
+  loop: "{{ BFV |json_query('data[*].Vo[0].name[0]')}}"
+  
+- name: Ensure the LSC files are present
+  copy:
+    path: "{{ voms_dir }}/{{ item.Vo[0].name[0]}}"
+    content: "TBD"
+  loop: "{{ BFV | json_query('data[*]')}}"

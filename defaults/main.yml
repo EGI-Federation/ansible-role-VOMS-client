@@ -12,3 +12,7 @@ prerequisites:
     16:
     - voms-clients
     - fetch-crl
+
+voms_dir:  /etc/grid-security/vomsdir
+vomses_dir: /etc/vomses
+vo_source_of_truth: http://cclavoisier01.in2p3.fr:8080/lavoisier/voms_vo?accept=json
