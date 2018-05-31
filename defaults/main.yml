@@ -1,2 +1,14 @@
 ---
 # defaults file for voms-client
+prerequisites:
+  redhat:
+    '6':
+      - voms-clients3
+      - fetch-crl
+    '7':
+      - voms-clients-cpp
+      - fetch-crl
+  ubuntu:
+    16:
+    - voms-clients
+    - fetch-crl

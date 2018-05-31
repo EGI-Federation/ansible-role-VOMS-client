@@ -1,2 +1,7 @@
 ---
 # tasks file for voms-client
+- name: Ensure packages are present
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ prerequisites[(ansible_os_family|lower)][ansible_distribution_major_version]}}"
