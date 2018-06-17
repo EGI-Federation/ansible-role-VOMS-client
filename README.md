@@ -1,4 +1,4 @@
-# VOMS Client [![Build Status](https://travis-ci.org/EGI-Foundation/VOMS-client-ansible.svg?branch=master)](https://travis-ci.org/EGI-Foundation/VOMS-client-ansible)
+# VOMS Client [![Build Status](https://travis-ci.org/EGI-Foundation/ansible-VOMS-client-role.svg?branch=master)](https://travis-ci.org/EGI-Foundation/ansible-VOMS-client-role)
 
 <!-- A brief description of the role goes here. -->
 
@@ -14,7 +14,11 @@ A description of the settable variables for this role should go here, including 
 
 ## Dependencies
 
-  - brucellino.ansible-umd
+Dependencies are not explicitly declared in the metadata, but this role depends on the UMD role: 
+
+```yaml
+  - role: brucellino.umd, release: 4
+```
 
 ## Example Playbook
 
@@ -26,6 +30,7 @@ passed in as parameters) is always nice for users too:
 ```yaml
     - hosts: servers
       roles:
+         - { role: brucellino.umd, release: 4, }
          - { role: EGI-Foundation.voms-client, vos: 'atlas' }
 ```
 

@@ -12,6 +12,10 @@ platforms:
     image: centos:6
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      callback_whitelist: yaml
+      stdout_callback: yaml
   lint:
     name: ansible-lint
 scenario:

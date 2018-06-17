@@ -1,6 +1,5 @@
 import os
 import testinfra.utils.ansible_runner
-import subprocess
 
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
@@ -19,8 +18,3 @@ def test_certificiates_dir(host):
 
     assert cert_dir.exists
     assert cert_dir.is_directory
-
-
-def test_role_exists():
-    host=testinfra.get_host("local://")
-    result = host.check_output("ansible-galaxy search voms")

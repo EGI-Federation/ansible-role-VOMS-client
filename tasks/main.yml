@@ -14,41 +14,66 @@
     - "{{voms_dir}}"
     - "{{ vomses_dir }}"
 
-- name: Get all the VOs
+- name: Get all the VOMS info
   get_url:
-    url: "{{ vo_source_of_truth }}"
+    url: "{{ lavoisier.base_url  }}/{{ lavoisier.endpoints.vo_voms }}"
     dest: /tmp/voms_vo.json
   creates: /tmp/voms_vo.json
+  delegate_to: localhost
+
+- name: Get the VO Cert Info
+  get_url:
+    url: "{{ lavoisier.base_url }}/{{ lavoisier.endpoints.vo_voms }}"
+    dest: /tmp/voms_certs.json
+  creates: /tmp/voms_certs.json
   delegate_to: localhost
 
 - name: Add a cron job to get the VOMS VO file
   debug:
     msg: "I guess?"
+    verbosity: 2
 
 - name: Configure specified VOs
   include_vars:
-    file:  /tmp/voms_vo.json
-    name: BFV
+    file: "{{ item.file }}"
+    name: "{{ item.name }}"
+  loop:
+    - file: /tmp/voms_vo.json
+      name: voms_vo
+    - file: /tmp/voms_certs.json
+      name: voms_certs
 
-# - name: Display all the VO names
-#   debug:
-#     msg: "{{item}}"
-#   loop: "{{ BFV | json_query('data[*].Vo[0].name[0]') }}"
 
-# - name: Debug Ops info
-#   debug: 
-#     var: item
-#   loop: "{{ BFV |json_query('data[*].Vo[0][name[0]=`ops`]')}}"
+- name: Display all the VO names
+  debug:
+    msg: "{{item}}"
+    verbosity: 3
+  loop: "{{ voms_vo | json_query('data[*].Vo[0].name[0]') }}"
+
+- name: Debug Ops info
+  debug:
+    var: item
+    verbosity: 2
+  loop: "{{ voms_vo |json_query('data[*].Vo[0].[name[0]==`ops`]')}}"
 
 
 - name: Create LSC directories
   file:
     path: "{{ voms_dir }}/{{ item }}"
     state: directory
-  loop: "{{ BFV |json_query('data[*].Vo[0].name[0]')}}"
-  
+  loop: "{{ voms_vo |json_query('data[*].Vo[0].name[0]')}}"
+
 - name: Ensure the LSC files are present
   copy:
-    path: "{{ voms_dir }}/{{ item.Vo[0].name[0]}}"
+    dest: "{{ voms_dir }}/{{ item.Vo[0].name[0]}}.lsc"
     content: "TBD"
-  loop: "{{ BFV | json_query('data[*]')}}"
+  loop: "{{ voms_vo | json_query('data[*]')}}"
+
+# See http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#vomses
+# Format is "vo_name" "hostname" "port" "dn" "alias"
+- name: Ensure vomses are present
+  copy:
+    dest: "{{ vomses_dir }}/{{ item.Vo[0].name[0]}}.{{ item.Vo[1].VoVomsServer[0].VoVomsServer[0].hostname[0]}}"
+    content: "{{ item.Vo[0].name[0]}} {{ item.Vo[1].VoVomsServer[0].VoVomsServer[0].hostname[0]}} {{ item.Vo[1].VoVomsServer[0].vomses_port }} dn alias"
+  loop: "{{ voms_vo | json_query('data[*]')}}"
+  ignore_errors: true
