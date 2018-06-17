@@ -21,6 +21,7 @@ script:
   - molecule verify
   - cd $TRAVIS_BUILD_DIR
 after_success:
+# Assert compliance with black panther and fashion police
 after_failure:
 before_deploy:
 deploy:
