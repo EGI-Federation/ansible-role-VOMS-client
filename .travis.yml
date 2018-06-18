@@ -14,10 +14,11 @@ before_script:
   - 'for file in `find . -maxdepth 2 -name "*.md"` ;  do markdownlint --ignore $md_ignore
   $file ; done'
 script:
-  - molecule check
   - molecule dependency
+  - molecule lint
   - molecule create
   - molecule converge
+  - molecule idempotence
   - molecule verify
   - cd $TRAVIS_BUILD_DIR
 after_success:
