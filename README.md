@@ -8,16 +8,18 @@ See [`requirements.txt`](requirements.txt)
 
 ## Role Variables
 
-<!--
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
--->
+Role variables kept on `defaults/main.yml` include: 
+
+- `prerequisites` - the prerequisite packages on an OS-basis
+- `voms_dir`, `vomses_dir` - directory locations on the target host which contain the voms information
+- ` lavoisier` - the lavoisier framework endpoints necessary for extracting the data necessary to populate the configuration files.
 
 ## Dependencies
 
 Dependencies are not explicitly declared in the metadata, but this role depends on the UMD role: 
 
 ```yaml
-  - role: brucellino.umd, release: 4
+  - { role: brucellino.umd, release: 4 }
 ```
 
 ## Example Playbook
