@@ -47,7 +47,7 @@
 - name: Ensure vomses are present
   copy:
     dest: "{{ vomses_dir }}/{{ item.name }}-{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0] }}"
-    content: "{{ item.name }} {{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0]}} {{ item.Vo[0].VoVomsServer[0].vomses_port }} {{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }} {{ item.name }}"
+    content: "'{{ item.name }}' '{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0]}}' '{{ item.Vo[0].VoVomsServer[0].vomses_port }}' '{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }}' '{{ item.name }}'"
     # content: "vo_name hostname port dn alias"
   loop: "{{ vo_voms | json_query('json.voVoms[*]')}}"
   ignore_errors: true
