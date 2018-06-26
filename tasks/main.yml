@@ -11,61 +11,43 @@
     path: "{{ item }}"
     state: "directory"
   loop:
-    - "{{voms_dir}}"
+    - "{{ voms_dir }}"
     - "{{ vomses_dir }}"
 
 - name: Get all the VOMS info
-  get_url:
-    url: "{{ lavoisier.base_url  }}/{{ lavoisier.endpoints.vo_voms }}"
-    dest: /tmp/vo_voms.json
-  creates: /tmp/vo_voms.json
-  delegate_to: localhost
-
-- name: Get the VO Cert Info
-  get_url:
-    url: "{{ lavoisier.base_url }}/{{ lavoisier.endpoints.vo_certs }}"
-    dest: /tmp/vo_certs.json
-  creates: /tmp/vo_certs.json
-  delegate_to: localhost
-
-- name: Add a cron job to get the VOMS VO file
-  debug:
-    msg: "I guess?"
-    verbosity: 2
-
-- name: Configure specified VOs
-  include_vars:
-    file: "{{ item.file }}"
-    name: "{{ item.name }}"
-  loop:
-    - file: /tmp/vo_voms.json
-      name: vo_voms
-    - file: /tmp/vo_certs.json
-      name: vo_certs
+  uri:
+    method: GET
+    url: "{{ lavoisier.base_url  }}/{{ lavoisier.vo_id_card_endpoint }}"
+    # return_content: yes
+  register: vo_voms
 
 - name: Create LSC directories
   file:
     path: "{{ voms_dir }}/{{ item }}"
     state: directory
-  loop: "{{ vo_certs |json_query('results[*].host')}}"
+  loop: "{{ vo_voms | json_query('json.voVoms[*].name') }}"
 
 # LSC files should have the format:
 # certificate DN
 # CA signing authority
-- name: Ensure the LSC files are present
+# Path is /etc/vomsdir/vo-name/voms-host.lsc
+- name: Ensure LSC files present
   copy:
-    dest: "{{ voms_dir }}/{{ item.host | default(omit) }}.lsc"
+    dest: "{{ voms_dir }}/{{item.name}}/{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0] }}.lsc"
     content: |
-                      "{{ item.X509Cert[0].DN[0] | default(omit) }}"
-                      "{{ item.X509Cert[1].CA_DN[0] | default (omit)}}"
-  loop: "{{ vo_certs | json_query('results[*]') }}"
+                    "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }}"
+                    "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[1].CA_DN[0] }}"
+  loop: "{{ vo_voms | json_query('json.voVoms[*]') }}"
+  ignore_errors: true
 
 
 # See http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#vomses
 # Format is "vo_name" "hostname" "port" "dn" "alias"
+# path is vomses_dir/vo_name-voms-server
 - name: Ensure vomses are present
   copy:
-    dest: "{{ vomses_dir }}/{{ item.Vo[0].name[0]}}.{{ item.Vo[1].VoVomsServer[0].VoVomsServer[0].hostname[0]}}"
-    content: "{{ item.Vo[0].name[0]}} {{ item.Vo[1].VoVomsServer[0].VoVomsServer[0].hostname[0]}} {{ item.Vo[1].VoVomsServer[0].vomses_port }} dn alias"
-  loop: "{{ vo_voms | json_query('data[*]')}}"
+    dest: "{{ vomses_dir }}/{{ item.name }}-{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0] }}"
+    # content: "{{ item.Vo[0].name[0] }} {{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0]}} {{ item.Vo[0].VoVomsServer[0].vomses_port }} {{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }} {{ item.name }}"
+    content: "vo_name hostname port dn alias"
+  loop: "{{ vo_voms | json_query('json.voVoms[*]')}}"
   ignore_errors: true
