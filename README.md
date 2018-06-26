@@ -2,6 +2,10 @@
 
 <!-- A brief description of the role goes here. -->
 
+This is an Ansible role which configures VOMS clients.
+VOMS clients are necessary to obtain authorisation for interacting
+with specific services, based on VO membership
+
 ## Requirements
 
 See [`requirements.txt`](requirements.txt)
