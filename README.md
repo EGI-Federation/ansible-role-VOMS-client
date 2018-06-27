@@ -2,6 +2,8 @@
 
 <!-- A brief description of the role goes here. -->
 
+## General information
+
 ### About VOMS and VOs
 
 This is an Ansible role which configures VOMS clients.
@@ -64,7 +66,7 @@ Role variables kept on `defaults/main.yml` include:
 
 - `prerequisites` - the prerequisite packages on an OS-basis
 - `voms_dir`, `vomses_dir` - directory locations on the target host which contain the voms information
-- ` lavoisier` - the lavoisier framework endpoints necessary for extracting the data necessary to populate the configuration files.
+- `lavoisier` - the lavoisier framework endpoints necessary for extracting the data necessary to populate the configuration files.
 
 There is no need to change the default variables.
 
