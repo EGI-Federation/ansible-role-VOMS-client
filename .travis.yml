@@ -17,8 +17,8 @@ script:
   - molecule dependency
   - molecule lint
   - molecule create
-  - molecule converge
-  - molecule idempotence
+  - travis_wait 30 molecule converge
+  - travis_wait 30 molecule idempotence
   - molecule verify
   - cd $TRAVIS_BUILD_DIR
 after_success:
