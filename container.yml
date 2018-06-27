@@ -1,0 +1,34 @@
+---
+version: "2"
+settings:
+
+  conductor:
+    # The Conductor container does the heavy lifting, and provides a portable
+    # Python runtime for building your target containers. It should be derived
+    # from the same distribution as you're building your target containers with.
+    base: centos:7
+    # roles_path:   # Specify a local path containing Ansible roles
+    # volumes:      # Provide a list of volumes to mount
+    # environment:  # List or mapping of environment variables
+
+  # Set the name of the project. Defaults to basename of the project directory.
+  # For built services, concatenated with service name to form the built image name.
+  project_name: voms-client
+
+  # The deployment_output_path is mounted to the Conductor container, and the
+  # `run` and `deployment` commands then write generated Ansible playbooks to it.
+  # deployment_output_path: ./ansible-deployment
+
+
+services:
+  voms-client:
+    from: "centos:7"
+    roles:
+      - { role: brucellino.umd, release: 4, crl_deploy: true }
+      - { role: ansible-VOMS-client-role }
+    command: ["/bin/sleep", "infinity"]
+
+registries:
+  quay:
+    url: https://quay.io
+    namespace: egi

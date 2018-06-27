@@ -1,0 +1,7 @@
+---
+- name: Install build prerequisites
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: prerequisites.ubuntu
+

@@ -10,9 +10,10 @@ prerequisites:
       - voms-clients-java
       - fetch-crl
   ubuntu:
-    16:
-      - voms-clients
-      - fetch-crl
+    - maven
+    - git
+    - default-java-jre
+    - default-java-jdk
 
 voms_dir: /etc/grid-security/vomsdir
 vomses_dir: /etc/vomses
