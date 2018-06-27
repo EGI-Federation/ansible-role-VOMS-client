@@ -55,6 +55,11 @@ The role is tested with [molecule](https://molecule.readthedocs.io/en/latest/) f
 
 Tests cover unit and integration tests, but not functional tests, since
 a personal certificate is necessary for using the VOMS client.
+Specific tests included are:
+
+- presence of binary executables
+- presence of configuration directories
+- contents of configuration files for selected VOs
 
 ## Requirements
 

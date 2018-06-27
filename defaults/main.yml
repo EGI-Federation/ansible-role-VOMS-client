@@ -7,6 +7,7 @@ prerequisites:
       - fetch-crl
     '7':
       - voms-clients-cpp
+      - voms-clients-java
       - fetch-crl
   ubuntu:
     16:
