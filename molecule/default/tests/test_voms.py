@@ -38,4 +38,4 @@ def test_vo_configuration(host, voname, voms_server, dn, ca_dn):
     vomses_file = host.file(vomses_filename)
 
     assert vomses_file.exists
-    # assert vomses_file.contains(/voname/)
+    assert vomses_file.contains(voname)
