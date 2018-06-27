@@ -25,4 +25,7 @@ lavoisier:
   voms_dn_query: json.voVoms[*].Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0]
   voms_ca_dn_query: json.voVoms[*].Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[1].CA_DN[0]
   bad_vos:
+    - 42
     - 70
+    - 184
+    - 185
