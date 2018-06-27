@@ -31,16 +31,32 @@
 # certificate DN
 # CA signing authority
 # Path is /etc/vomsdir/vo-name/voms-host.lsc
-- name: Ensure LSC files present
+- name: Ensure LSC files present (0-41)
   copy:
     dest: "{{ voms_dir }}/{{item.name}}/{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0] }}.lsc"
     content: |
                     "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }}"
                     "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[1].CA_DN[0] }}"
-  loop: "{{ vo_voms | json_query('json.voVoms[*]') }}"
+  loop: "{{ vo_voms | json_query('json.voVoms[0:42]') }}"
   ignore_errors: true
 
+- name: Ensure LSC files present (43-69)
+  copy:
+    dest: "{{ voms_dir }}/{{item.name}}/{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0] }}.lsc"
+    content: |
+                    "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }}"
+                    "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[1].CA_DN[0] }}"
+  loop: "{{ vo_voms | json_query('json.voVoms[43:69]') }}"
+  ignore_errors: true
 
+- name: Ensure LSC files present (71-192)
+  copy:
+    dest: "{{ voms_dir }}/{{item.name}}/{{ item.Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0] }}.lsc"
+    content: |
+                    "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0] }}"
+                    "{{ item.Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[1].CA_DN[0] }}"
+  loop: "{{ vo_voms | json_query('json.voVoms[70:100]') }}"
+  ignore_errors: true
 # See http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#vomses
 # Format is "vo_name" "hostname" "port" "dn" "alias"
 # path is vomses_dir/vo_name-voms-server
