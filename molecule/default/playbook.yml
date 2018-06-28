@@ -3,4 +3,4 @@
   hosts: all
   roles:
     - { role: brucellino.umd, release: 4, crl_deploy: true }
-    - { role: ansible-VOMS-client-role }
+    - { role: ansible-role-VOMS-client }
