@@ -14,7 +14,7 @@ prerequisites:
     - git
     - default-java-jre
     - default-java-jdk
-
+voms_client_repo: https://github.com/italiangrid/voms-clients
 voms_dir: /etc/grid-security/vomsdir
 vomses_dir: /etc/vomses
 lavoisier:
