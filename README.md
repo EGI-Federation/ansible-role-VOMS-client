@@ -1,5 +1,4 @@
-# VOMS Client [![Build Status](https://travis-ci.org/EGI-Foundation/ansible-VOMS-client-role.svg?branch=master)](https://travis-ci.org/EGI-Foundation/ansible-VOMS-client-role)
-
+# VOMS Client [![Build Status](https://travis-ci.org/EGI-Foundation/ansible-role-VOMS-client.svg?branch=master)](https://travis-ci.org/EGI-Foundation/ansible-role-VOMS-client)
 <!-- A brief description of the role goes here. -->
 
 ## General information
