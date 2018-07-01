@@ -1,0 +1,40 @@
+---
+- name: Get all the VOMS info
+  include_vars:
+    file: "files/data.yml"
+    name: vo_voms
+
+- name: Ensure Required VOMS directories
+  file:
+    path: "{{ item }}"
+    state: "directory"
+  loop:
+    - "{{ voms_dir }}"
+    - "{{ vomses_dir }}"
+
+- name: Create LSC directories
+  file:
+    path: "{{ voms_dir }}/{{ item }}"
+    state: directory
+  loop: "{{ vo_voms | json_query('data[*].name') }}"
+
+# LSC files should have the format:
+# certificate DN
+# CA signing authority
+# Path is /etc/vomsdir/vo-name/voms-host.lsc
+
+- name: Ensure LSC files present
+  copy:
+    dest: "{{ voms_dir }}/{{ item.name}}/{{ item.voms.hostname }}.lsc"
+    content: |
+      "{{ item.voms.DN}}"
+      "{{ item.voms.CA_DN}}"
+  loop: "{{ vo_voms | json_query('data[*]')}}"
+
+- name: Ensure vomses files present
+  copy:
+    dest: "{{ vomses_dir }}/{{ item.name }}-{{ item.voms.hostname }}"
+    content: >
+                        "'{{ item.name }}' '{{ item.voms.hostname}}' '{{ item.voms.port }}'
+                        '{{ item.voms.DN }}' '{{ item.name }}'"
+  loop: "{{ vo_voms | json_query('data[*]')}}"
