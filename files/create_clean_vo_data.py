@@ -2,8 +2,8 @@
 
 import json
 import requests
-import yaml
-
+from ruamel import yaml
+import jsbeautifier
 
 def get_data():
     vars = yaml.safe_load(open('../defaults/main.yml'))
@@ -30,11 +30,7 @@ def filter_data(data):
     """
     cleaned_data = {"data": []}
     for i, vo in enumerate(data['voVoms']):
-        print vo['name']
-        # Open LSC file
-        # Open vomses file
         for k, vomses in enumerate(vo['Vo']):
-            print k
             try:
                 clean_vo = {
                     'name': None,
@@ -51,16 +47,18 @@ def filter_data(data):
                 clean_vo['voms']['port'] = vo['Vo'][k]['VoVomsServer'][0]['vomses_port']
                 cleaned_data['data'].append(clean_vo)
             except IndexError:
-                print vo['name'] + "is bad"
+                print "VO " + vo['name'] + " is bad"
+    print str(i) + " vos configured"
 
     # write it to a file
-    with open('data.json', 'w') as file:
-        json.dump(cleaned_data, file)
+    with open('data.yml', 'w') as file:
+        yaml.dump(cleaned_data,file,Dumper=yaml.RoundTripDumper)
     return 0
 
 
-data = get_data()
-filter_data(data)
-
 if __name__ == "__main__":
-    print "I'm in main"
+    opts = jsbeautifier.default_options()
+    opts.indent_size = 2
+    opts.space_in_empty_paren = True
+    data = get_data()
+    filter_data(get_data())
