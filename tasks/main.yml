@@ -1,4 +1,4 @@
 ---
 # tasks file for voms-client
 - include_tasks: "install-{{ ansible_os_family | lower }}.yml"
-- include_tasks: configure.yml
+- include_tasks: cache_config.yml

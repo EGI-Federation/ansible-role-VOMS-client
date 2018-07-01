@@ -19,15 +19,4 @@ voms_dir: /etc/grid-security/vomsdir
 vomses_dir: /etc/vomses
 lavoisier:
   base_url: "http://cclavoisier01.in2p3.fr:8080/lavoisier"
-  # endpoints:
-  #   vo_voms: "/voms_vo?accept=json"
-  #   vo_certs: "/voms-certificates?accept=json"
   vo_id_card_endpoint: "/voVoms?accept=json"
-  voms_hostname_query: json.voVoms[*].Vo[0].VoVomsServer[0].VoVomsServer[1].hostname[0]
-  voms_dn_query: json.voVoms[*].Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[0].DN[0]
-  voms_ca_dn_query: json.voVoms[*].Vo[0].VoVomsServer[0].VoVomsServer[2].X509Cert[1].CA_DN[0]
-  bad_vos:
-    - 42
-    - 70
-    - 184
-    - 185
