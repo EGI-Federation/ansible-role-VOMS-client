@@ -40,12 +40,29 @@ To make life bearable, we take a **data-driven** approach.
 
 The necessary data is available via the EGI Operations Portal, which
 is used in this role as a data source.
-The endpoint is queried in order to return a JSON, which is then
-parsed.
-The results are used to template the necessary files in the relevant
-directories.
 This allows us to configure **all** VOs registered in the Operations Portal
 in one foul swoop.
+Two approaches could be taken to generating the configuration:
+
+1. configuration from raw data pulled from Lavoisier at Ansible runtime
+1. configuration from filtered data pulled from Lavoisier prior to Ansible runtime.
+
+In the former approach, a well-crafted [`json_query`](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#json-query-filter) could be used to iterate over the data returned from Lavoisier.
+The query in this case needs to reflect the complexity and structure of the data object returned by Lavoisier, which cannot be assumed to return an array of consistent data.
+In the latter approach, a much simpler is used to iterate over a cached data object, which has been filtered to exclude items which do not contain the relevant information.
+This cached data can be easily created by a simple python script - `[files/create_clean_vo_data.py](files/create_clean_vo_data.py) which
+reads the role vars and creates a local cache of data.
+The data format has been chosen to be YAML so that we can add it to the repository and keep track of changes - this would be difficult with JSON, due to the lack of lines.
+
+We have opted for the latter (see [4215026e18c](https://github.com/EGI-Foundation/ansible-role-VOMS-client/commit/52ac706fe059a336244bb2e4af0bdee2f37752a6)) for the following reasons:
+
+  1. It is easier to _maintain_ a well-documented script than a complex json query.
+  2. It is easier to _read_ a well-documented script than a complex json query
+  3. If the role is added as a dependency to playbooks (as will certainly be the case, since the voms clients are used all over the place), the data needs to be present.
+
+There is however the drawback that the data in the repo can quickly become out of synch with the actual data on Lavoisier. 
+This could happen either by individuals editing the cache by hand, or by the maintainer not running the script when necessary.
+The only way to overcome this is to maintain a strong test suite.
 
 ## Testing
 
@@ -93,7 +110,7 @@ passed in as parameters) is always nice for users too:
 ```yaml
     - hosts: servers
       roles:
-         - { role: brucellino.umd, release: 4, }
+         - { role: EGI-Foundation.umd, release: 4 }
          - { role: EGI-Foundation.voms-client}
 ```
 
