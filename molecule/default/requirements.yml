@@ -2,4 +2,3 @@
 - src: https://github.com/EGI-Foundation/ansible-role-umd
   name: EGI-Foundation.umd
   scm: git
-# - brucellino.umd
