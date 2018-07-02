@@ -16,7 +16,7 @@ before_script:
 script:
   - molecule dependency
   - molecule lint
-  - molecule create
+  - molecule --debug create
   - travis_wait 30 molecule converge
   - travis_wait 30 molecule idempotence
   - molecule verify
