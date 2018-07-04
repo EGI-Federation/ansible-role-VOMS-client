@@ -1,4 +1,4 @@
 molecule
 pymarkdownlint
-docker-py
+docker
 jmespath

@@ -1,0 +1,17 @@
+---
+- name: Install build prerequisites
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: prerequisites.ubuntu
+
+- name: Get the voms repo
+  git:
+    repo: "{{ voms_client_repo }}"
+    dest: /root/voms-clients
+    version: v3.3.0
+    clone: 'yes'
+    bare: 'yes'
+    recursive: 'no'
+    force: 'yes'
+    update: 'yes'
