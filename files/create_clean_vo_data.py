@@ -1,25 +1,29 @@
 #!/bin/env python
 
+from __future__ import print_function
+
 import json
 import requests
 from ruamel import yaml
 import jsbeautifier
 
+
 def get_data():
     vars = yaml.safe_load(open('../defaults/main.yml'))
-    url = vars['lavoisier']['base_url'] + vars['lavoisier']['vo_id_card_endpoint']
+    url = ''.join((vars['lavoisier']['base_url'],
+                   vars['lavoisier']['vo_id_card_endpoint']))
     try:
         data = requests.get(url).json()
     except UserWarning as e:
-        print e
+        print(e)
     return data
 
 
 def filter_data(data):
     """
-    Filter the json from Lavoisier, by excluding VOs which do not have a VOMS server.
-    This method takes the raw json from Lavoisier and loops over the entries in it,
-    extracting the relevant information for the VO.
+    Filter the json from Lavoisier, by excluding VOs which do not have a VOMS
+    server. This method takes the raw json from Lavoisier and loops over the
+    entries in it, extracting the relevant information for the VO.
     The result is an object (data) with an array of dicts containing:
         VO name
         voms server hostname
@@ -34,25 +38,24 @@ def filter_data(data):
             try:
                 clean_vo = {
                     'name': None,
-                    'voms': {
-                        'DN': None,
-                        'CA_DN': None,
-                        'hostname': None,
-                    }
+                    'voms': {},
                 }
+                voms_server = vo['Vo'][k]['VoVomsServer'][0]['VoVomsServer'][2]
+                clean_vo['voms'].update({
+                    'DN': voms_server['X509Cert'][0]['DN'][0],
+                    'CA_DN': voms_server['X509Cert'][1]['CA_DN'][0],
+                    'hostname': voms_server['host'],
+                    'port': vo['Vo'][k]['VoVomsServer'][0]['vomses_port'],
+                })
                 clean_vo['name'] = vo['name']
-                clean_vo['voms']['DN'] = vo['Vo'][k]['VoVomsServer'][0]['VoVomsServer'][2]['X509Cert'][0]['DN'][0]
-                clean_vo['voms']['CA_DN'] = vo['Vo'][k]['VoVomsServer'][0]['VoVomsServer'][2]['X509Cert'][1]['CA_DN'][0]
-                clean_vo['voms']['hostname'] = vo['Vo'][k]['VoVomsServer'][0]['VoVomsServer'][2]['host']
-                clean_vo['voms']['port'] = vo['Vo'][k]['VoVomsServer'][0]['vomses_port']
                 cleaned_data['data'].append(clean_vo)
             except IndexError:
-                print "VO " + vo['name'] + " is bad"
-    print str(i) + " vos configured"
+                print("VO %s is bad" % vo['name'])
+    print("%d vos configured" % i)
 
     # write it to a file
     with open('data.yml', 'w') as file:
-        yaml.dump(cleaned_data,file,Dumper=yaml.RoundTripDumper)
+        yaml.dump(cleaned_data, file, Dumper=yaml.RoundTripDumper)
     return 0
 
 
