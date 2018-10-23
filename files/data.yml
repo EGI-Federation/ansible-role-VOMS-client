@@ -1,11 +1,5 @@
 data:
 - voms:
-    DN: /C=RS/O=AEGIS/OU=Institute of Physics Belgrade/CN=host/voms.ipb.ac.rs
-    CA_DN: /C=RS/O=AEGIS/CN=AEGIS-CA
-    hostname: voms.ipb.ac.rs
-    port: '15001'
-  name: aegis
-- voms:
     DN: /DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
     CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
     hostname: lcg-voms2.cern.ch
@@ -42,14 +36,14 @@ data:
     port: '15012'
   name: argo
 - voms:
-    DN: /C=AM/O=ArmeSFo/O=IIAP NAS RA/OU=Scientific Computing Center/CN=voms.grid.am
+    DN: /C=AM/O=ArmeSFo/O=IIAP NAS RA/OU=Center for Scientific Computing/CN=voms.grid.am
     CA_DN: /C=AM/O=ArmeSFo/CN=ArmeSFo CA
     hostname: voms.grid.am
     port: '15000'
   name: armgrid.grid.am
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20012'
   name: astro.vo.eu-egee.org
@@ -107,6 +101,12 @@ data:
     hostname: voms.cc.kek.jp
     port: '15026'
   name: belle2.org
+- voms:
+    DN: /DC=bg/DC=acad/O=hosts/O=IICT-BAS/OU=GTA/CN=voms.ipp.acad.bg
+    CA_DN: /DC=bg/DC=acad/CN=BG.ACAD CA
+    hostname: voms.ipp.acad.bg
+    port: '15002'
+  name: bg-edu.grid.acad.bg
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=CC-IN2P3/CN=cclcgvomsli01.in2p3.fr
     CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
@@ -537,7 +537,7 @@ data:
   name: planck
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20004'
   name: proactive
@@ -677,7 +677,7 @@ data:
   name: vo.agata.org
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20010'
   name: vo.apc.univ-paris7.fr
@@ -713,13 +713,13 @@ data:
   name: vo.gear.cern.ch
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20018'
   name: vo.grand-est.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20001'
   name: vo.grif.fr
@@ -743,7 +743,7 @@ data:
   name: vo.helio-vo.eu
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20021'
   name: vo.hess-experiment.eu
@@ -761,37 +761,31 @@ data:
   name: vo.ipnl.in2p3.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20003'
   name: vo.ipno.in2p3.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20014'
   name: vo.irfu.cea.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20000'
   name: vo.lal.in2p3.fr
 - voms:
-    DN: /O=GRID-FR/C=FR/O=CNRS/OU=CC-IN2P3/CN=cclcgvomsli01.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
-    hostname: cclcgvomsli01.in2p3.fr
-    port: '15005'
-  name: vo.lapp.in2p3.fr
-- voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20007'
   name: vo.llr.in2p3.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20008'
   name: vo.lpnhe.in2p3.fr
@@ -803,7 +797,7 @@ data:
   name: vo.lpsc.in2p3.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20017'
   name: vo.mcia.fr
@@ -815,7 +809,7 @@ data:
   name: vo.metacentrum.cz
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20023'
   name: vo.msfg.fr
@@ -851,7 +845,7 @@ data:
   name: vo.northgrid.ac.uk
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20022'
   name: vo.panda.gsi.de
@@ -887,7 +881,7 @@ data:
   name: vo.rhone-alpes.idgrilles.fr
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20006'
   name: vo.sbg.in2p3.fr
@@ -941,7 +935,7 @@ data:
   name: vo.turbo.pic.es
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20005'
   name: vo.u-psud.fr
@@ -977,7 +971,7 @@ data:
   name: zeus
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20019'
   name: vo.sn2ns.in2p3.fr
@@ -1424,7 +1418,7 @@ data:
   name: chipster.csc.fi
 - voms:
     DN: /O=GRID-FR/C=FR/O=CNRS/OU=LAL/CN=grid12.lal.in2p3.fr
-    CA_DN: /C=FR/O=CNRS/CN=GRID2-FR
+    CA_DN: /C=FR/O=MENESR/OU=GRID-FR/CN=AC GRID-FR Services
     hostname: grid12.lal.in2p3.fr
     port: '20024'
   name: harpo.cea.fr
@@ -1440,6 +1434,12 @@ data:
     hostname: voms.recas.ba.infn.it
     port: '15002'
   name: hydrology.terradue.com
+- voms:
+    DN: /C=CN/O=HEP/OU=CC/O=IHEP/CN=voms.ihep.ac.cn
+    CA_DN: /C=CN/O=HEP/CN=Institute of High Energy Physics Certification Authority
+    hostname: voms.ihep.ac.cn
+    port: '15008'
+  name: juno
 - voms:
     DN: /DC=RO/DC=RomanianGRID/O=IFIN-HH/CN=tbit02.nipne.ro
     CA_DN: /DC=RO/DC=RomanianGRID/O=ROSA/OU=Certification Authority/CN=RomanianGRID
@@ -1483,6 +1483,12 @@ data:
     hostname: voms.fis.puc.cl
     port: '15000'
   name: afigrid.cl
+- voms:
+    DN: /C=UK/O=eScience/OU=Imperial/L=Physics/CN=lzvoms.grid.hep.ph.ic.ac.uk
+    CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
+    hostname: lzvoms.grid.hep.ph.ic.ac.uk
+    port: '15001'
+  name: lz
 - voms:
     DN: /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=voms.hep.wisc.edu
     CA_DN: /DC=org/DC=cilogon/C=US/O=CILogon/CN=CILogon OSG CA 1
@@ -1550,13 +1556,6 @@ data:
     port: '15017'
   name: bioinfo.twgrid.org
 - voms:
-    DN: /DC=org/DC=terena/DC=tcs/C=IT/ST=Rome/L=Frascati/O=Istituto Nazionale di Fisica
-      Nucleare/CN=voms.ba.infn.it
-    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
-    hostname: voms.ba.infn.it
-    port: '15002'
-  name: extras-fp7.eu
-- voms:
     DN: /C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk
     CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
     hostname: voms.gridpp.ac.uk
@@ -1593,8 +1592,8 @@ data:
     port: '15020'
   name: vo.padme.org
 - voms:
-    DN: /DC=org/DC=terena/DC=tcs/C=BE/ST=Brussels/L=Elsene/O=Le reseau telematique
-      belge de la recherche/CN=voms01.begrid.be
+    DN: /DC=org/DC=terena/DC=tcs/C=BE/L=Ixelles/O=Le reseau telematique belge de la
+      recherche/CN=voms01.begrid.be
     CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms01.begrid.be
     port: '18004'
@@ -1695,3 +1694,9 @@ data:
     hostname: voms1.grid.cesnet.cz
     port: '15039'
   name: ericll.org
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=CESGA/CN=grid.egi.cesga.es
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.egi.cesga.es
+    port: '15002'
+  name: mathematical-software
