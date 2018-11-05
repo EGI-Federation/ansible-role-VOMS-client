@@ -549,8 +549,8 @@ data:
     port: '15003'
   name: prod.vo.eu-eela.eu
 - voms:
-    DN: /C=MX/O=UNAMgrid/OU=DGSCA UNAM CU/CN=voms.grid.unam.mx
-    CA_DN: /C=MX/O=UNAMgrid/OU=UNAM/CN=CA
+    DN: /C=MX/O=UNAM/OU=UNAMgrid/CN=voms.grid.unam.mx
+    CA_DN: /C=MX/O=UNAM/OU=UNAMgrid/CN=PKIUNAMgrid
     hostname: voms.grid.unam.mx
     port: '15000'
   name: prod.vo.eu-eela.eu
@@ -993,12 +993,6 @@ data:
     hostname: voms.grid.sara.nl
     port: '30008'
   name: xenon.biggrid.nl
-- voms:
-    DN: /DC=org/DC=opensciencegrid/O=Open Science Grid/OU=Services/CN=http/voms.hpcc.ttu.edu
-    CA_DN: /DC=org/DC=cilogon/C=US/O=CILogon/CN=CILogon OSG CA 1
-    hostname: voms.hpcc.ttu.edu
-    port: '15004'
-  name: dream.hipcat.net
 - voms:
     DN: /C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk
     CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
@@ -1700,3 +1694,15 @@ data:
     hostname: voms.egi.cesga.es
     port: '15002'
   name: mathematical-software
+- voms:
+    DN: /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms1.grid.cesnet.cz
+    CA_DN: /DC=cz/DC=cesnet-ca/O=CESNET CA/CN=CESNET CA 3
+    hostname: voms1.grid.cesnet.cz
+    port: '15002'
+  name: vo.clarin.eu
+- voms:
+    DN: /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms2.grid.cesnet.cz
+    CA_DN: /DC=cz/DC=cesnet-ca/O=CESNET CA/CN=CESNET CA 3
+    hostname: voms2.grid.cesnet.cz
+    port: '15002'
+  name: vo.clarin.eu
