@@ -1,5 +1,11 @@
 data:
 - voms:
+    DN: /C=RS/O=AEGIS/OU=Institute of Physics Belgrade/CN=host/voms.ipb.ac.rs
+    CA_DN: /C=RS/O=AEGIS/CN=AEGIS-CA
+    hostname: voms.ipb.ac.rs
+    port: '15001'
+  name: aegis
+- voms:
     DN: /DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch
     CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
     hostname: lcg-voms2.cern.ch
@@ -144,7 +150,8 @@ data:
     port: '15020'
   name: cdf
 - voms:
-    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=CESGA/CN=grid.egi.cesga.es
+    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=Centro de Supercomputacion
+      de Galicia/CN=grid.egi.cesga.es
     CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms.egi.cesga.es
     port: '15110'
@@ -403,7 +410,8 @@ data:
     port: '15111'
   name: ildg
 - voms:
-    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=CESGA/CN=grid.egi.cesga.es
+    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=Centro de Supercomputacion
+      de Galicia/CN=grid.egi.cesga.es
     CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms.egi.cesga.es
     port: '15100'
@@ -1102,18 +1110,6 @@ data:
     port: '15501'
   name: na62.vo.gridpp.ac.uk
 - voms:
-    DN: /C=UK/O=eScience/OU=Oxford/L=OeSC/CN=voms02.gridpp.ac.uk
-    CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
-    hostname: voms02.gridpp.ac.uk
-    port: '15501'
-  name: na62.vo.gridpp.ac.uk
-- voms:
-    DN: /C=UK/O=eScience/OU=Imperial/L=Physics/CN=voms03.gridpp.ac.uk
-    CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
-    hostname: voms03.gridpp.ac.uk
-    port: '15501'
-  name: na62.vo.gridpp.ac.uk
-- voms:
     DN: /C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk
     CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
     hostname: voms.gridpp.ac.uk
@@ -1689,7 +1685,8 @@ data:
     port: '15039'
   name: ericll.org
 - voms:
-    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=CESGA/CN=grid.egi.cesga.es
+    DN: /DC=org/DC=terena/DC=tcs/C=ES/L=Santiago de Compostela/O=Centro de Supercomputacion
+      de Galicia/CN=grid.egi.cesga.es
     CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms.egi.cesga.es
     port: '15002'
@@ -1698,11 +1695,191 @@ data:
     DN: /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms1.grid.cesnet.cz
     CA_DN: /DC=cz/DC=cesnet-ca/O=CESNET CA/CN=CESNET CA 3
     hostname: voms1.grid.cesnet.cz
-    port: '15002'
+    port: '15040'
   name: vo.clarin.eu
 - voms:
     DN: /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms2.grid.cesnet.cz
     CA_DN: /DC=cz/DC=cesnet-ca/O=CESNET CA/CN=CESNET CA 3
     hostname: voms2.grid.cesnet.cz
-    port: '15002'
+    port: '15040'
   name: vo.clarin.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher01.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher02.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher03.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher04.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher05.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher06.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher07.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher08.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher09.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher10.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher11.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher12.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher13.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher14.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher15.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher16.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher17.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher18.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher19.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher20.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher21.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher22.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher23.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher24.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher25.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher26.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher27.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher28.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher29.eosc-hub.eu
+- voms:
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms.recas.ba.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
+    hostname: voms.recas.ba.infn.it
+    port: '15005'
+  name: dih-voucher30.eosc-hub.eu
