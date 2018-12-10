@@ -18,8 +18,8 @@ data:
     port: '15000'
   name: alice
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15008'
   name: ams02.cern.ch
@@ -132,8 +132,8 @@ data:
     port: '15025'
   name: camont
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15001'
   name: cdf
@@ -169,8 +169,8 @@ data:
     port: '15002'
   name: cms
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15003'
   name: compchem
@@ -181,8 +181,8 @@ data:
     port: '15003'
   name: compchem
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15007'
   name: comput-er.it
@@ -223,8 +223,8 @@ data:
     port: '15001'
   name: egeode
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15005'
   name: enea
@@ -235,8 +235,8 @@ data:
     port: '15005'
   name: enea
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15014'
   name: enmr.eu
@@ -265,8 +265,8 @@ data:
     port: '15017'
   name: euchina
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15010'
   name: euindia
@@ -277,8 +277,8 @@ data:
     port: '15010'
   name: euindia
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15016'
   name: eumed
@@ -319,8 +319,8 @@ data:
     port: '15001'
   name: gilda
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15018'
   name: glast.org
@@ -331,8 +331,8 @@ data:
     port: '15018'
   name: glast.org
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15008'
   name: gridit
@@ -417,14 +417,14 @@ data:
     port: '15100'
   name: imath.cesga.es
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15002'
   name: inaf
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15000'
   name: infngrid
@@ -508,8 +508,8 @@ data:
     port: '15010'
   name: ops.ndgf.org
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15013'
   name: pamela
@@ -593,8 +593,8 @@ data:
     port: '15503'
   name: snoplus.snolab.ca
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-02.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-02.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-02.pd.infn.it
     port: '15009'
   name: superbvo.org
@@ -635,8 +635,8 @@ data:
     port: '15003'
   name: t2k.org
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15002'
   name: theophys
@@ -666,8 +666,8 @@ data:
     port: '15002'
   name: ukqcd
 - voms:
-    DN: /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it
-    CA_DN: /C=IT/O=INFN/CN=INFN Certification Authority
+    DN: /DC=org/DC=terena/DC=tcs/C=IT/L=Frascati/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
+    CA_DN: /C=NL/ST=Noord-Holland/L=Amsterdam/O=TERENA/CN=TERENA eScience SSL CA 3
     hostname: voms-01.pd.infn.it
     port: '15009'
   name: virgo
