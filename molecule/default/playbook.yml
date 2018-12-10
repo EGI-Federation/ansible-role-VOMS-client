@@ -1,6 +1,7 @@
 ---
 - name: Converge
   hosts: all
+  strategy: free
   roles:
     - { role: EGI-Foundation.umd, release: 4, crl_deploy: true, tags: umd }
     - { role: ansible-role-VOMS-client }
