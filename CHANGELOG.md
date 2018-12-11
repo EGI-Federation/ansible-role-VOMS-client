@@ -12,6 +12,21 @@ git shortlog --oneline --decorate <last tag>
 
 ### Added
 
+### Changed
+<!-- Changed for changes in existing functionality. -->
+### Deprecated
+<!-- Deprecated for soon-to-be removed features. -->
+### Removed
+<!-- Removed for now removed features. -->
+### Fixed 
+<!-- Fixed for any bug fixes. -->
+### Security
+<!-- Security in case of vulnerabilities. -->
+
+## [0.1.2] - EGI Trust Anchor 1.95
+
+### Added
+
 - 8fc8889 Use free strategy for provisioning
 - 1567ca9 Update DIH voucher vo configs
 - ab511f2 Add container badge
