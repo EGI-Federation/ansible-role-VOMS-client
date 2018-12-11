@@ -27,9 +27,14 @@ git shortlog --oneline --decorate <last tag>
 
 ### Added
 
+- b76c6a9 (dh_vos_update) Add changelog.
+- 93792d7 DIH VOS update (#21)
+- a3294d1 (origin/dh_vos_update) Update voms1 and voms2.pd certs from https://operations-portal.egi.eu/broadcast/archive/2275
 - 8fc8889 Use free strategy for provisioning
 - 1567ca9 Update DIH voucher vo configs
+- f8c58ef Add the innovation hub vouchers
 - ab511f2 Add container badge
+
 
 ### Changed
 <!-- Changed for changes in existing functionality. -->
