@@ -1,0 +1,39 @@
+---
+language: python
+python:
+  - '2.7'
+sudo: required
+services:
+  - docker
+env:
+  global:
+    - secure:
+    - md_ignore: R1
+before_install:
+install:
+  - pip install -r requirements.txt
+before_script:
+  - for file in `find . -maxdepth 2 -name "*.md"` ;  do markdownlint --ignore $md_ignore $file ; done
+script:
+  - molecule dependency
+  - molecule lint
+  - molecule create
+  - travis_wait 30 molecule converge
+  - travis_wait 30 molecule idempotence
+  - molecule verify
+  - cd $TRAVIS_BUILD_DIR
+after_success:
+  - docker commit voms-clients-centos6 quay.io/egi/voms-client:centos6
+  - docker commit voms-clients-centos7 quay.io/egi/voms-client:centos7
+  - docker login -u="egi+packerbot" -p="$QUAY_PASSWORD" quay.io
+  - docker push quay.io/egi/voms-client:centos6
+  - docker push quay.io/egi/voms-client:centos7
+after_failure:
+before_deploy:
+deploy:
+after_deploy:
+after_script:
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  slack:
+    secure:
