@@ -2,7 +2,6 @@
 
 from __future__ import print_function
 
-import json
 import requests
 from ruamel import yaml
 import jsbeautifier
