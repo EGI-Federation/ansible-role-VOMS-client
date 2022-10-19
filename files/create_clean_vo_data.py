@@ -54,24 +54,26 @@ def filter_data(data):
         :param data=vo: the json object to parse
     """
     cleaned_data = {"data": []}
-    for i, vo in enumerate(data['voVoms']):
-        for k, vomses in enumerate(vo['Vo']):
+    for i, vo in enumerate(data["voVoms"]):
+        for k, vomses in enumerate(vo["Vo"]):
             try:
                 clean_vo = {
-                    'name': None,
-                    'voms': {},
+                    "name": None,
+                    "voms": {},
                 }
-                voms_server = vo['Vo'][k]['VoVomsServer'][0]['VoVomsServer'][2]
-                clean_vo['voms'].update({
-                    'DN': voms_server['X509Cert'][0]['DN'][0],
-                    'CA_DN': voms_server['X509Cert'][1]['CA_DN'][0],
-                    'hostname': voms_server['host'],
-                    'port': vo['Vo'][k]['VoVomsServer'][0]['vomses_port'],
-                })
-                clean_vo['name'] = vo['name']
-                cleaned_data['data'].append(clean_vo)
+                voms_server = vo["Vo"][k]["VoVomsServer"][0]["VoVomsServer"][2]
+                clean_vo["voms"].update(
+                    {
+                        "DN": voms_server["X509Cert"][0]["DN"][0],
+                        "CA_DN": voms_server["X509Cert"][1]["CA_DN"][0],
+                        "hostname": voms_server["host"],
+                        "port": vo["Vo"][k]["VoVomsServer"][0]["vomses_port"],
+                    }
+                )
+                clean_vo["name"] = vo["name"]
+                cleaned_data["data"].append(clean_vo)
             except IndexError:
-                print("VO %s is bad" % vo['name'])
+                print("VO %s is bad" % vo["name"])
     print("%d vos configured" % i)
 
     # write it to a file
