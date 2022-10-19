@@ -50,8 +50,8 @@ def filter_data(data):
     entries in it, extracting the relevant information for the VO.
     The result is an object (data) with an array of dicts containing:
         VO name
-        voms server hostname
-        voms port
+        VOMS server hostname
+        VOMS port
         VOMS Server cert DN
         CA DN of the issueing CA
         :param data=vo: the json object to parse
