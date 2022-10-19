@@ -2,7 +2,10 @@
 
 from __future__ import print_function
 
+import json
+import os
 import pathlib
+import sys
 
 import jsbeautifier
 import requests
@@ -17,9 +20,23 @@ def get_data():
         (vars["lavoisier"]["base_url"], vars["lavoisier"]["vo_id_card_endpoint"])
     )
     try:
-        data = requests.get(url).json()
+        auth_token = os.environ["OPS_PORTAL_API_TOKEN"]
+    except KeyError:
+        print("OPS_PORTAL_API_TOKEN not found in the environment, exiting.")
+        sys.exit(1)
+    headers = {"X-API-Key": auth_token, "Accept": "application/json"}
+    try:
+        response = requests.get(url, headers=headers)
+        status_code = response.status_code
+        if status_code != requests.codes.ok:
+            print("Graph API call result: ")
+            print(status_code)
+            print(json.dumps(response.json(), indent=2))
+            sys.exit(1)
+        data = response.json()
     except UserWarning as e:
         print(e)
+        sys.exit(1)
     return data
 
 
