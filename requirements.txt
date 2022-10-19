@@ -1,3 +1,6 @@
 molecule
 docker
 jmespath
+# Dependencies for ./files/create_clean_vo_data.py
+ruamel.yaml
+jsbeautifier
