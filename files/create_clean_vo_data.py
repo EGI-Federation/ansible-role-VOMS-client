@@ -75,7 +75,7 @@ def filter_data(data):
     print("%d vos configured" % i)
 
     # write it to a file
-    with open('data.yml', 'w') as file:
+    with open("%s/data.yml" % pathlib.Path(__file__).parent.absolute(), "w") as file:
         yaml.dump(cleaned_data, file, Dumper=yaml.RoundTripDumper)
     return 0
 
