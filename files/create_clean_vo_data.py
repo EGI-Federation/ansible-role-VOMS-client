@@ -2,15 +2,20 @@
 
 from __future__ import print_function
 
+import pathlib
+
+import jsbeautifier
 import requests
 from ruamel import yaml
-import jsbeautifier
 
 
 def get_data():
-    vars = yaml.safe_load(open('../defaults/main.yml'))
-    url = ''.join((vars['lavoisier']['base_url'],
-                   vars['lavoisier']['vo_id_card_endpoint']))
+    vars = yaml.safe_load(
+        open("%s/../defaults/main.yml" % pathlib.Path(__file__).parent.absolute())
+    )
+    url = "".join(
+        (vars["lavoisier"]["base_url"], vars["lavoisier"]["vo_id_card_endpoint"])
+    )
     try:
         data = requests.get(url).json()
     except UserWarning as e:
