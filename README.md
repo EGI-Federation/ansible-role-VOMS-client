@@ -115,7 +115,7 @@ Dependencies are not explicitly declared in the metadata, but this role depends
 on the UMD role:
 
 ```yaml
-- { role: brucellino.umd, release: 4 }
+- { role: EGI-Foundation.umd, release: 4 }
 ```
 
 ## Example Playbook
