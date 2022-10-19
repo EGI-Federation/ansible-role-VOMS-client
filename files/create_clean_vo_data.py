@@ -13,6 +13,9 @@ from ruamel import yaml
 
 
 def get_data():
+    """
+    Download VO info data using Operations Portal API
+    """
     vars = yaml.safe_load(
         open("%s/../defaults/main.yml" % pathlib.Path(__file__).parent.absolute())
     )
