@@ -39,8 +39,8 @@ you submit the pull request). We have a 3 steps process for contributions.
 ### Code Review Process
 
 Code review takes place in GitHub pull requests. See
-[this article](https://help.github.com/articles/about-pull-requests/) if you're
-not familiar with GitHub Pull Requests.
+[this article](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+if you're not familiar with GitHub Pull Requests.
 
 Once you open a pull request, maintainers will review your code using the
 built-in code review process in GitHub PRs. The process at this point is as
