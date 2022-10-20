@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https://example.com"
+    },
+    {
+      "pattern": "^https://docs.github.com"
     }
   ]
 }
