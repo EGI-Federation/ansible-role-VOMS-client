@@ -20,3 +20,4 @@ vomses_dir: /etc/vomses
 lavoisier:
   base_url: "https://operations-portal.egi.eu/api"
   vo_id_card_endpoint: "/vo-voms/json"
+voms_data_query: 'data[*]'
