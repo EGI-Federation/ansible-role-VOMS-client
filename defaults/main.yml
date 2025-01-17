@@ -9,6 +9,10 @@ prerequisites:
       - voms-clients-cpp
       - voms-clients-java
       - fetch-crl
+    "9":
+      - voms-clients-cpp
+      - voms-clients-java
+      - fetch-crl
   ubuntu:
     - maven
     - git

@@ -181,7 +181,7 @@ if one would like to include only support for biomed, dteam and ops:
     - { role: EGI-Foundation.voms-client }
 ```
 
-## Licence
+## License
 
 Apache-2.0
 
