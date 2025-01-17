@@ -12,11 +12,17 @@
     - "{{ voms_dir }}"
     - "{{ vomses_dir }}"
 
+# Restricts request to supported VO if defined
+- name: Set VOMS data query
+  set_fact:
+    voms_data_query: "data[?{{ [\"name == '\"] | product(supported_vos) | map(\"join\") | product([\"'\"]) | map(\"join\") | join(\"||\") }}]"
+  when: supported_vos is defined
+
 - name: Create LSC directories
   file:
     path: "{{ voms_dir }}/{{ item }}"
     state: directory
-  loop: "{{ vo_voms | json_query('data[*].name') }}"
+  loop: "{{ vo_voms | json_query(voms_data_query~'.name') }}"
 
 # LSC files should have the format:
 # certificate DN
@@ -30,7 +36,7 @@
       {{ item.DN}}
       {{ item.CA_DN}}
   loop:
-    "{{ vo_voms | json_query('data[*]') | subelements('voms') | to_json |
+    "{{ vo_voms | json_query(voms_data_query) | subelements('voms') | to_json |
     from_json | json_query('[*].{name: [0].name, hostname: [1].hostname, DN:
     [1].DN, CA_DN: [1].CA_DN}') }}"
 
@@ -41,6 +47,6 @@
       "{{ item.name }}" "{{ item.hostname}}" "{{ item.port }}" "{{ item.DN }}"
       "{{ item.name }}"
   loop:
-    "{{ vo_voms | json_query('data[*]') | subelements('voms') | to_json |
+    "{{ vo_voms | json_query(voms_data_query) | subelements('voms') | to_json |
     from_json | json_query('[*].{name: [0].name, hostname: [1].hostname, DN:
     [1].DN, port: [1].port}') }}"
