@@ -116,7 +116,8 @@ $ ./files/create_clean_vo_data.py
 
 ## Testing
 
-The role is tested with [molecule](https://molecule.readthedocs.io/en/latest/)
+The role is tested with
+[molecule](https://ansible.readthedocs.io/projects/molecule/)
 for the following scenarios:
 
 - `default` (tested with
