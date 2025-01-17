@@ -10,7 +10,7 @@
       "pattern": "^https://docs.github.com"
     },
     {
-      "pattern": "^https://operations-portal.egi.eu/api$"
+      "pattern": "^https://operations-portal.egi.eu/api*"
     }
   ]
 }
