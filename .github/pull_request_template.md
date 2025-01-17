@@ -1,16 +1,17 @@
 <!--
-it is good practice to first discuss a change before sending a pull request.
-Please provide a reference issue number here, or go back and open a new
-issue
+A good PR should describe what benefit this brings to the repository.
+Ideally, there is an existing issue which the PR address.
+
+Please check the Contributing guide CONTRIBUTING.md for style requirements and
+advice.
 -->
 
-# **Related issue**
+# Summary
 
-## Short summary of changes
+<!-- Describe in plain English what this PR does -->
 
-<!--
-How does this pull request improve our work ?
-This section should be no more than a few lines.
-If your pull request is the result of several commits, you could use their
-summaries here.
--->
+---
+
+<!-- Add, if any, the related issue here, e.g. #6 -->
+
+**Related issue :**
