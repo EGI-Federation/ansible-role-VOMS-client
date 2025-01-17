@@ -164,7 +164,24 @@ on the UMD role:
     - { role: EGI-Foundation.voms-client }
 ```
 
-## License
+### Supporting only a limited numbers of VO
+
+This can be achieved by setting the `supported_vos` variables, as an example,
+if one would like to include only support for biomed, dteam and ops:
+
+```yaml
+- hosts: servers
+  vars:
+    supported_vos:
+      - biomed
+      - dteam
+      - ops
+  roles:
+    - { role: EGI-Foundation.umd, release: 5 }
+    - { role: EGI-Foundation.voms-client }
+```
+
+## Licence
 
 Apache-2.0
 
