@@ -72,7 +72,7 @@ for the following reasons:
    case, since the voms clients are used all over the place), the data needs to
    be present.
 
-There is however the drawback that the data in the repo can quickly become out
+There is however the drawback that the data in the repository can quickly become out
 of synch with the actual data on Lavoisier. This could happen either by
 individuals editing the cache by hand, or by the maintainer not running the
 script when necessary. The only way to overcome this is to maintain a strong
@@ -116,7 +116,8 @@ $ ./files/create_clean_vo_data.py
 
 ## Testing
 
-The role is tested with [molecule](https://molecule.readthedocs.io/en/latest/)
+The role is tested with
+[molecule](https://ansible.readthedocs.io/projects/molecule/)
 for the following scenarios:
 
 - `default` (tested with
@@ -161,6 +162,23 @@ on the UMD role:
 - hosts: servers
   roles:
     - { role: EGI-Foundation.umd, release: 4 }
+    - { role: EGI-Foundation.voms-client }
+```
+
+### Supporting only a limited numbers of VO
+
+This can be achieved by setting the `supported_vos` variables, as an example,
+if one would like to include only support for biomed, dteam and ops:
+
+```yaml
+- hosts: servers
+  vars:
+    supported_vos:
+      - biomed
+      - dteam
+      - ops
+  roles:
+    - { role: EGI-Foundation.umd, release: 5 }
     - { role: EGI-Foundation.voms-client }
 ```
 
