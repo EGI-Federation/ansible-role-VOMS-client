@@ -1,26 +1,40 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-
-<!-- For an easy way to do this see 
+<!-- For an easy way to do this see
 https://stackoverflow.com/questions/7387612/git-changelog-how-to-get-all-changes-up-to-a-specific-tag
 git shortlog --oneline --decorate <last tag>
  -->
+
 ## [Unreleased]
 
 ### Added
 
+- 67721c2 Add support for AlmaLinux 9 / RHEL9 (#29)
+- 60eb8b3 Add the possibility to filter VOs when creating the VOMS files (#26)
+- 78649b5 Fix lsc and vomses files creation, drop unused data.json legacy file (#24)
+
 ### Changed
+
 <!-- Changed for changes in existing functionality. -->
+
 ### Deprecated
+
 <!-- Deprecated for soon-to-be removed features. -->
+
 ### Removed
+
 <!-- Removed for now removed features. -->
-### Fixed 
+
+### Fixed
+
 <!-- Fixed for any bug fixes. -->
+
 ### Security
+
 <!-- Security in case of vulnerabilities. -->
 
 ## [0.1.2] - EGI Trust Anchor 1.95
@@ -31,21 +45,9 @@ git shortlog --oneline --decorate <last tag>
 - 93792d7 DIH VOS update (#21)
 - a3294d1 (origin/dh_vos_update) Update voms1 and voms2.pd certs from https://operations-portal.egi.eu/broadcast/archive/2275
 - 8fc8889 Use free strategy for provisioning
-- 1567ca9 Update DIH voucher vo configs
+- 1567ca9 Update DIH voucher VO configs
 - f8c58ef Add the innovation hub vouchers
 - ab511f2 Add container badge
-
-
-### Changed
-<!-- Changed for changes in existing functionality. -->
-### Deprecated
-<!-- Deprecated for soon-to-be removed features. -->
-### Removed
-<!-- Removed for now removed features. -->
-### Fixed 
-<!-- Fixed for any bug fixes. -->
-### Security
-<!-- Security in case of vulnerabilities. -->
 
 ## [0.1.1] - EGI Trust Anchor 1.94
 
@@ -59,21 +61,11 @@ This is the release of the Ansible VOMS clients role corresponding to EGI Trust 
 - 968e63b Add mathematical-softare VO and change French CA DN
 - fcbd796 Merge pull request #16 from enolfc/pythonic
 - 10064b4 python 3 support and pep8 fixes
-- d1e246a Push to quay  on success
+- d1e246a Push to quay on success
 
 ### Changed
 
 - 88e424b Switch to umd base image
-- 
-### Deprecated
-<!-- Deprecated for soon-to-be removed features. -->
-### Removed
-<!-- Removed for now removed features. -->
-### Fixed 
-<!-- Fixed for any bug fixes. -->
-### Security
-<!-- Security in case of vulnerabilities. -->
-
 
 ## [0.1.0] - 2018-07-04
 
@@ -99,14 +91,3 @@ The first release of the role which configures all VOs from the Operations Porta
 - 20a5c7a changed the endpoint for the data
 - b4bce34 Update README to describe how we ingest data
 - 96324b5 Initial Commit
-
-### Changed
-<!-- Changed for changes in existing functionality. -->
-### Deprecated
-<!-- Deprecated for soon-to-be removed features. -->
-### Removed
-<!-- Removed for now removed features. -->
-### Fixed 
-<!-- Fixed for any bug fixes. -->
-### Security
-<!-- Security in case of vulnerabilities. -->
