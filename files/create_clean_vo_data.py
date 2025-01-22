@@ -9,14 +9,15 @@ import sys
 
 import jsbeautifier
 import requests
-from ruamel import yaml
+import ruamel.yaml
 
 
 def get_data():
     """
     Download VO info data using Operations Portal API
     """
-    vars = yaml.safe_load(
+    yaml = ruamel.yaml.YAML(typ="safe", pure=True)
+    vars = yaml.load(
         open("%s/../defaults/main.yml" % pathlib.Path(__file__).parent.absolute())
     )
     url = "".join(
@@ -94,7 +95,8 @@ def filter_data(data):
 
     # write it to a file
     with open("%s/data.yml" % pathlib.Path(__file__).parent.absolute(), "w") as file:
-        yaml.dump(cleaned_data, file, Dumper=yaml.RoundTripDumper)
+        yaml = ruamel.yaml.YAML(typ="rt", pure=True)
+        yaml.dump(cleaned_data, file)
     return 0
 
 
