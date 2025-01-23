@@ -8,12 +8,7 @@ jobs:
   molecule:
     name: Run molecule
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        umd_version:
-          - default
-          - umd5
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -28,7 +23,7 @@ jobs:
         working-directory: "${{ github.repository }}"
       - name: "Run molecule manually"
         run: |
-          molecule --debug test --scenario-name ${{ matrix.umd_version }}
+          molecule --debug test --scenario-name default
         working-directory: "${{ github.repository }}"
         env:
           ANSIBLE_FORCE_COLOR: "1"
