@@ -444,12 +444,6 @@ data:
     CA_DN: /C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2016
     hostname: voms2.hellasgrid.gr
     port: '15020'
-- name: vo.darkside.org
-  voms:
-  - DN: /O=Acme Co/CN=Kubernetes Ingress Controller Fake Certificate
-    CA_DN: /O=Acme Co/CN=Kubernetes Ingress Controller Fake Certificate
-    hostname: voms-darkside.cloud.cnaf.infn.it
-    port: '15013'
 - name: vo.nextgeoss.eu
   voms:
   - DN: /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms1.grid.cesnet.cz
