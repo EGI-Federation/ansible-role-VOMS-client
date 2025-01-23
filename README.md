@@ -4,6 +4,10 @@
 
 ## General information
 
+> Known issue: As of 2025/01/23, due to ongoing migration from X.509 with VOMS
+> to tokens, some information in the Operations Portal is missing, and some
+> LSC files may be missing. Please report an issue or open a PR if needed.
+
 ### About VOMS and VOs
 
 This is an Ansible role which configures VOMS clients. VOMS is a web service for
@@ -102,6 +106,10 @@ $ export OPS_PORTAL_API_TOKEN='...'
 $ curl -X GET "https://operations-portal.egi.eu/api/vo-voms/json" \
     -H "Accept: application/json" \
     -H "X-API-Key: $OPS_PORTAL_API_TOKEN"
+# Using JQ to filter a specific VO
+$ curl -X GET "https://operations-portal.egi.eu/api/vo-voms/json" \
+    H "Accept: application/json" \
+    H "X-API-Key: $OPS_PORTAL_API_TOKEN" | jq '.results[] | select(.name=="dteam")'
 ```
 
 Once the `curl` call is confirmed to work, it's possible to use the provided
@@ -188,4 +196,4 @@ Apache-2.0
 
 ## Author Information
 
-See [AUTHORS.md](AUTHORS.md)
+See [AUTHORS](AUTHORS)
