@@ -73,7 +73,7 @@ data:
     port: '15000'
 - name: iber.vo.ibergrid.eu
   voms:
-  - DN: /C=PT/ST=Lisboa/Ass.Par.A i"/O="LIP-Lab De Instrumentacao e Fis Expe de Particulas/CN=voms01.ncg.ingrid.pt
+  - DN: /C=PT/ST=Lisboa/O="LIP-Lab De Instrumentacao e Fis Expe de Particulas, Ass.Par.A i"/CN=voms01.ncg.ingrid.pt
     CA_DN: /C=NL/O=GEANT Vereniging/CN=GEANT OV RSA CA 4
     hostname: voms01.ncg.ingrid.pt
     port: '40003'
@@ -147,7 +147,7 @@ data:
     port: '15003'
 - name: tut.vo.ibergrid.eu
   voms:
-  - DN: /C=PT/ST=Lisboa/Ass.Par.A i"/O="LIP-Lab De Instrumentacao e Fis Expe de Particulas/CN=voms01.ncg.ingrid.pt
+  - DN: /C=PT/ST=Lisboa/O="LIP-Lab De Instrumentacao e Fis Expe de Particulas, Ass.Par.A i"/CN=voms01.ncg.ingrid.pt
     CA_DN: /C=NL/O=GEANT Vereniging/CN=GEANT OV RSA CA 4
     hostname: voms01.ncg.ingrid.pt
     port: '40002'
@@ -412,7 +412,7 @@ data:
     port: '15512'
 - name: vo.indigo-datacloud.eu
   voms:
-  - DN: /C=PT/ST=Lisboa/Ass.Par.A i"/O="LIP-Lab De Instrumentacao e Fis Expe de Particulas/CN=voms01.ncg.ingrid.pt
+  - DN: /C=PT/ST=Lisboa/O="LIP-Lab De Instrumentacao e Fis Expe de Particulas, Ass.Par.A i"/CN=voms01.ncg.ingrid.pt
     CA_DN: /C=NL/O=GEANT Vereniging/CN=GEANT OV RSA CA 4
     hostname: voms01.ncg.ingrid.pt
     port: '40101'
