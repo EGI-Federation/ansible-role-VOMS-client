@@ -1,0 +1,35 @@
+---
+name: Run molecule tests
+
+on:
+  pull_request:
+
+jobs:
+  molecule:
+    name: Run molecule
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        umd_version:
+          - default
+          - umd5
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: "${{ github.repository }}"
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: "Install python dependencies"
+        run: |
+          pip install -r requirements.txt
+        working-directory: "${{ github.repository }}"
+      - name: "Run molecule manually"
+        run: |
+          molecule --debug test --scenario-name ${{ matrix.umd_version }}
+        working-directory: "${{ github.repository }}"
+        env:
+          ANSIBLE_FORCE_COLOR: "1"
+          PY_COLORS: "1"
