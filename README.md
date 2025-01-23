@@ -192,4 +192,4 @@ Apache-2.0
 
 ## Author Information
 
-See [AUTHORS.md](AUTHORS.md)
+See [AUTHORS](AUTHORS)
