@@ -17,6 +17,12 @@ data:
     CA_DN: /C=NL/O=GEANT Vereniging/CN=GEANT eScience SSL CA 4
     hostname: voms.grid.sara.nl
     port: '30013'
+- name: atlas
+  voms:
+  - DN: /DC=ch/DC=cern/OU=computers/CN=atlas-auth.web.cern.ch
+    CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    hostname: voms-atlas-auth.app.cern.ch
+    port: '443'
 - name: belle
   voms:
   - DN: /C=JP/ST=Ibaraki/L=Tsukuba/O=High Energy Accelerator Research Organization/CN=voms.cc.kek.jp
@@ -35,6 +41,18 @@ data:
     CA_DN: /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
     hostname: voms.gridpp.ac.uk
     port: '15025'
+- name: cms
+  voms:
+  - DN: /DC=ch/DC=cern/OU=computers/CN=cms-auth.web.cern.ch
+    CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    hostname: voms-cms-auth.app.cern.ch
+    port: '443'
+- name: dteam
+  voms:
+  - DN: /DC=ch/DC=cern/OU=computers/CN=dteam-auth.web.cern.ch
+    CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    hostname: voms-dteam-auth.app.cern.ch
+    port: '443'
 - name: enmr.eu
   voms:
   - DN: /DC=org/DC=terena/DC=tcs/C=IT/ST=Roma/O=Istituto Nazionale di Fisica Nucleare/CN=voms2.cnaf.infn.it
@@ -69,6 +87,12 @@ data:
     CA_DN: /C=NL/O=GEANT Vereniging/CN=GEANT eScience SSL CA 4
     hostname: voms.cnaf.infn.it
     port: '15000'
+- name: lhcb
+  voms:
+  - DN: /DC=ch/DC=cern/OU=computers/CN=lhcb-auth.web.cern.ch
+    CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    hostname: voms-lhcb-auth.app.cern.ch
+    port: '443'
 - name: lofar
   voms:
   - DN: /DC=org/DC=terena/DC=tcs/C=NL/ST=Utrecht/O=SURF B.V./CN=voms1.grid.surfsara.nl
@@ -81,6 +105,12 @@ data:
     CA_DN: /DC=org/DC=ugrid/CN=UGRID CA G2
     hostname: voms.grid.org.ua
     port: '15110'
+- name: ops
+  voms:
+  - DN: /DC=ch/DC=cern/OU=computers/CN=ops-auth.web.cern.ch
+    CA_DN: /DC=ch/DC=cern/CN=CERN Grid Certification Authority
+    hostname: voms-ops-auth.app.cern.ch
+    port: '443'
 - name: pamela
   voms:
   - DN: /DC=org/DC=terena/DC=tcs/C=IT/ST=Roma/O=Istituto Nazionale di Fisica Nucleare/CN=voms-01.pd.infn.it
