@@ -4,6 +4,10 @@
 
 ## General information
 
+> Known issue: As of 2025/01/23, due to ongoing migration from X.509 with VOMS
+> to tokens, some information in the Operations Portal is missing, and some
+> LSC files may be missing. Please report an issue or open a PR if needed.
+
 ### About VOMS and VOs
 
 This is an Ansible role which configures VOMS clients. VOMS is a web service for
