@@ -1,6 +1,7 @@
 ---
 galaxy_info:
-  role_name: voms-client
+  role_name: voms_client
+  namespace: egi_federation
   author: "EGI Federation"
   company: "EGI Federation"
   description: VOMS client role for the hpc grid cloud
