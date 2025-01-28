@@ -3,5 +3,5 @@
   hosts: all
   strategy: free
   roles:
-    - { role: EGI-Foundation.umd, release: 4, crl_deploy: true, tags: umd }
+    - { role: egi_federation.umd, release: 5, crl_deploy: true, tags: umd }
     - { role: ansible-role-VOMS-client }
