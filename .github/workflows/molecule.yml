@@ -2,7 +2,7 @@
 name: Run molecule tests
 
 on:
-  pull_request:
+  - pull_request
 
 jobs:
   molecule:
