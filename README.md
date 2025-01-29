@@ -66,7 +66,7 @@ chosen to be YAML so that we can add it to the repository and keep track of
 changes - this would be difficult with JSON, due to the lack of lines.
 
 We have opted for the latter (see
-[4215026e18c](https://github.com/EGI-Federation/ansible-role-VOMS-client/commit/52ac706fe059a336244bb2e4af0bdee2f37752a6))
+[4215026e18c](https://github.com/EGI-Federation/ansible-role-voms-client/commit/52ac706fe059a336244bb2e4af0bdee2f37752a6))
 for the following reasons:
 
 1. It is easier to _maintain_ a well-documented script than a complex json
