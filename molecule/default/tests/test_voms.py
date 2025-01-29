@@ -43,16 +43,17 @@ def test_voms_dir(host, directory):
 @pytest.mark.parametrize(
     "voname,voms_server,dn",
     [
-        (
-            "ops",
-            "lcg-voms2.cern.ch",
-            "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch",
-        ),
-        (
-            "dteam",
-            "voms2.hellasgrid.gr",
-            "/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr",
-        ),
+        # FIXME: 2025-01-29: dteam and ops info missing in the operations portal
+        # (
+        #     "ops",
+        #     "lcg-voms2.cern.ch",
+        #     "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch",
+        # ),
+        # (
+        #     "dteam",
+        #     "voms2.hellasgrid.gr",
+        #     "/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr",
+        # ),
         (
             "demo.fedcloud.egi.eu",
             "voms1.grid.cesnet.cz",
