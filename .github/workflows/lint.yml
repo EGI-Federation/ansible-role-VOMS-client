@@ -28,5 +28,7 @@ jobs:
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # Only check new or edited files
           VALIDATE_ALL_CODEBASE: false
+          # hadolint tries to validate jinja templates
+          VALIDATE_DOCKERFILE_HADOLINT: false
           # Fail on errors
           DISABLE_ERRORS: false
