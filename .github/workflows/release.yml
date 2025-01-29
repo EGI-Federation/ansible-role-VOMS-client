@@ -1,0 +1,58 @@
+---
+# When a tag is created
+# - build and publish container to quay
+# - publish role to ansible-galaxy
+name: Release a new version, publish artefacts
+
+on:
+  push:
+    tags:
+      - "v*"
+    branches:
+      - "main"
+
+# https://github.com/marketplace/actions/push-to-registry
+jobs:
+  publish:
+    name: Build and publish VOMS client with UMD
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - "almalinux9"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install python dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Build voms-client image with molecule
+        run: |
+          molecule --debug create --scenario-name default
+        env:
+          ANSIBLE_FORCE_COLOR: "1"
+          PY_COLORS: "1"
+
+      # Access is managed at https://quay.io/repository/egi/umd5?tab=settings
+      # Credentials for the robot account can be retrieved there
+      # TODO: look into pushing some description
+      # https://github.com/marketplace/actions/update-container-description-action
+      - name: Publish image to Quay
+        run: |
+          docker commit voms-client quay.io/egi/voms-client:${{ matrix.os }}
+          echo "${{ secrets.QUAY_REGISTRY_PASSWORD }}" | docker login -u="egi+egi_github" --password-stdin quay.io
+          docker push quay.io/egi/voms-client:${{ matrix.os }}
+
+      # Publish role to ansible galaxy
+      - name: Publish role to Ansible Galaxy
+        uses: robertdebock/galaxy-action@1.2.1
+        with:
+          galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
+          git_branch: "main"
