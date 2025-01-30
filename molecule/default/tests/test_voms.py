@@ -44,17 +44,18 @@ def test_voms_dir(host, directory):
 @pytest.mark.parametrize(
     "voname,voms_server,dn",
     [
-        # FIXME: 2025-01-29: dteam and ops info missing in the operations portal
-        # (
-        #     "ops",
-        #     "lcg-voms2.cern.ch",
-        #     "/DC=ch/DC=cern/OU=computers/CN=lcg-voms2.cern.ch",
-        # ),
-        # (
-        #     "dteam",
-        #     "voms2.hellasgrid.gr",
-        #     "/C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr",
-        # ),
+        # XXX: 2025-01-29: dteam and ops info missing in the operations portal
+        # Info was added manually to the files/data.yml via #33
+        (
+            "ops",
+            "voms-ops-auth.app.cern.ch",
+            "/DC=ch/DC=cern/OU=computers/CN=ops-auth.web.cern.ch",
+        ),
+        (
+            "dteam",
+            "voms-dteam-auth.app.cern.ch",
+            "/DC=ch/DC=cern/OU=computers/CN=dteam-auth.web.cern.ch",
+        ),
         (
             "demo.fedcloud.egi.eu",
             "voms1.grid.cesnet.cz",
