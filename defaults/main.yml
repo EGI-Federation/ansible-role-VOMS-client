@@ -2,13 +2,6 @@
 # defaults file for voms-client
 prerequisites:
   redhat:
-    "6":
-      - voms-clients3
-      - fetch-crl
-    "7":
-      - voms-clients-cpp
-      - voms-clients-java
-      - fetch-crl
     "9":
       - voms-clients-cpp
       - voms-clients-java
@@ -24,4 +17,4 @@ vomses_dir: /etc/vomses
 lavoisier:
   base_url: "https://operations-portal.egi.eu/api"
   vo_id_card_endpoint: "/vo-voms/json"
-voms_data_query: 'data[*]'
+voms_data_query: "data[*]"

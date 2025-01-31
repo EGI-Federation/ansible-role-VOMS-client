@@ -1,12 +1,11 @@
 ---
 version: "2"
 settings:
-
   conductor:
     # The Conductor container does the heavy lifting, and provides a portable
     # Python runtime for building your target containers. It should be derived
     # from the same distribution as you're building your target containers with.
-    base: centos:7
+    base: almalinux:9
     # roles_path:   # Specify a local path containing Ansible roles
     # volumes:      # Provide a list of volumes to mount
     # environment:  # List or mapping of environment variables
@@ -19,12 +18,11 @@ settings:
   # `run` and `deployment` commands then write generated Ansible playbooks to it.
   # deployment_output_path: ./ansible-deployment
 
-
 services:
   voms-client:
-    from: "centos:7"
+    from: "almalinux:9"
     roles:
-      - { role: brucellino.umd, release: 4, crl_deploy: true }
+      - { role: egi_federation.umd, release: 5, crl_deploy: true }
       - { role: ansible-VOMS-client-role }
     command: ["/bin/sleep", "infinity"]
 

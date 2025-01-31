@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  strategy: free
+  roles:
+    - { role: egi_federation.umd, release: 5, crl_deploy: true, tags: umd }
+    - { role: egi_federation.voms_client }

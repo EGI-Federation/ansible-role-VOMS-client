@@ -1,6 +1,10 @@
-molecule
+ansible
 docker
+molecule
+molecule-plugins[docker]
 jmespath
+pytest
+pytest-testinfra
 # Dependencies for ./files/create_clean_vo_data.py
 ruamel.yaml
 jsbeautifier
